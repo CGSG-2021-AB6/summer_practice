@@ -38,7 +38,7 @@ def vv():
 
 elist = vv()
 print(si())
-G = nx.Graph()
+G = nx.DiGraph()
 G.add_weighted_edges_from(elist)
 
 labels = nx.get_edge_attributes(G, 'weight')
@@ -62,7 +62,7 @@ def update(idx):
 
     # рендер меток рёбер
     edge_labels = nx.get_edge_attributes(G, "weight")
-    nx.draw_networkx_edge_labels(G, pos, edge_labels, ax=ax)
+    nx.draw_networkx_edge_labels(G, pos, edge_labels, ax=ax, label_pos=0.6)
 
     ax.set_title(f'Frame {idx}')
 
